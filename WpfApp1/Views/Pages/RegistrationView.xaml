@@ -1,0 +1,126 @@
+﻿<Page x:Class="WpfApp1.Views.Pages.RegistrationView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1.Views.Pages"
+      xmlns:st="WpfApp1.Styles"
+      xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d"
+      DataContext="{Binding Source={StaticResource DependencyInjection}, Path=RegistrationViewModel}"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RegistrationView"
+      >
+
+    <Border Background="#1b262d">
+
+        <Grid MaxWidth="600" MaxHeight="450">
+
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox x:Name="UserName"
+                 
+                 Tag="Name"
+                 Style="{StaticResource TextBoxStyle}"
+                 Grid.Row="1"
+                 Grid.Column="0"
+                 Text="{Binding User.Name}"
+                 >
+
+            </TextBox>
+
+
+            <TextBox x:Name="Surname"
+                 Tag="Surname"
+                 Style="{StaticResource TextBoxStyle}"
+                 Text="{Binding User.Surname}"
+                 Grid.Row="1"
+                 Grid.Column="1"
+                 
+                 />
+
+            <TextBox x:Name="Phonenumber"
+                 Tag="Phone Number"
+                 Style="{StaticResource TextBoxStyle}"
+                 Grid.ColumnSpan="2"
+                 Grid.Row="3"
+                 Text="{Binding User.Phonenumber}"
+                 />
+
+            <TextBox x:Name="Email"
+                 Tag="E-mail"
+                 Style="{StaticResource TextBoxStyle}"
+                 Grid.Row="2"
+                 Width="500"
+                 Grid.ColumnSpan="2"
+                 Text="{Binding User.Email}"
+                 />
+
+            <TextBox x:Name="Password"
+                 Tag="Password"
+                 Style="{StaticResource TextBoxStyle}"
+                 Grid.Row="4"
+                 Text="{Binding User.Password}"
+                 />
+
+            <TextBox x:Name="PasswordReset"
+                 Tag="Repeat Paswword"
+                 Style="{StaticResource TextBoxStyle}"
+                 Grid.Row="4"
+                 Grid.Column="1"
+                 Text="{Binding RepeatPassword}"
+                 />
+
+
+
+
+
+            <Label Content="Registration"
+               Style="{StaticResource RegistrationLabelStyle}"
+               Grid.Row="0" Height="59" Width="254"
+               Grid.ColumnSpan="2"
+               >
+            </Label>
+
+
+
+
+            <Button x:Name="Register"
+                Style="{StaticResource MainButton}"
+                Grid.Row="5"
+                Content="Register" 
+                Command="{Binding RegistrationCommand}"
+                Grid.ColumnSpan="2"/>
+
+
+            <Button x:Name="GoToAuthorizationPage"
+                Style="{StaticResource MainButton}"
+                Grid.Row="6"
+                Content="Authorize"
+                Grid.ColumnSpan="2"
+                Command="{Binding GoToAuthorizationPageCommand}"
+                Height="30"
+                Width="150"
+                />
+
+
+        </Grid>
+    </Border>
+      
+
+    
+</Page>

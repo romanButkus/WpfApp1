@@ -1,0 +1,17 @@
+﻿<Application x:Class="WpfApp1.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfApp1.Helpers"
+             StartupUri="Views/Windows/FormView.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <local:DIContainer x:Key="DependencyInjection"/>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/AppStyles.xaml"/>
+                <ResourceDictionary Source="/Styles/RegistrationViewStyle.xaml"/>
+                <ResourceDictionary Source="/Styles/AuthorizationViewStyles.xaml"/>
+                <ResourceDictionary Source="/Styles/ButtonStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

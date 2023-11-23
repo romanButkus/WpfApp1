@@ -1,0 +1,50 @@
+﻿<Window x:Class="WpfApp1.Views.Windows.FormView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.Views.Windows"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        DataContext="{Binding Source={StaticResource DependencyInjection}, Path=FormViewModel}"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Title="FormView" Height="450" Width="800">
+    
+    <Grid x:Name="MainBackground" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="30"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="3" Style="{StaticResource SmallButton}" Click="Button_Click">
+                <md:PackIcon Kind="CloseBold"/>
+            </Button>
+
+            <Button Grid.Column="2" Style="{StaticResource SmallButton}" Click="MaximizeButton_Click_1">
+                <md:PackIcon Kind="Maximize"/>
+            </Button>
+
+            <Button Grid.Column="1" Style="{StaticResource SmallButton}" Click="MinimizeButton_Click_1">
+                <md:PackIcon Kind="Minimize"/>
+            </Button>
+        </Grid>
+        
+        <Frame Content="{Binding Navigation.Frame.Content}" 
+               Opacity="{Binding Navigation.Frame.Opacity}"
+               Grid.Row="1"
+               NavigationUIVisibility="Hidden">
+            
+        </Frame>
+    </Grid>
+</Window>
