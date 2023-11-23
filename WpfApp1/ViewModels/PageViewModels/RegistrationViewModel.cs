@@ -44,7 +44,7 @@ namespace WpfApp1.ViewModels.PageViewModels
             if(string.IsNullOrEmpty(User.Password) || User.Password != RepeatPassword || string.IsNullOrEmpty(RepeatPassword))
             {
                 
-                MessageBox.Show("пароли не совпадают");
+                MessageBox.Show("пароли не упупсовпадают");
                 return;
             }
 
